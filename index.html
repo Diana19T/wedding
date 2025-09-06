@@ -8,28 +8,24 @@
   </head>
   <body>
     <audio id="bg-music" muted loop>
-  <source src="music/alex-warren-ordinary.mp3" type="audio/mpeg">
-</audio>
+      <source src="music/alex-warren-ordinary.mp3" type="audio/mpeg">
+    </audio>
 
-<script>
-  const audio = document.getElementById('bg-music');
-
-  // спробувати стартувати відразу (де дозволено)
-  audio.play().catch(()=>{ /* тихо ігноруємо */ });
-
-  // на першу взаємодію — знімаємо mute і граємо
-  const unlock = () => {
-    audio.muted = false;
-    audio.volume = 0.5;      // не оглушай гостей
-    audio.play().catch(()=>{});
-    ['click','touchstart','keydown','scroll'].forEach(ev =>
+    <script>
+      const audio = document.getElementById('bg-music');
+      audio.play().catch(()=>{ /* тихо ігноруємо */ });
+      const unlock = () => {
+      audio.muted = false;
+      audio.volume = 0.5;      // не оглушай гостей
+      audio.play().catch(()=>{});
+      ['click','touchstart','keydown','scroll'].forEach(ev =>
       window.removeEventListener(ev, unlock, {passive:true})
-    );
-  };
-  ['click','touchstart','keydown','scroll'].forEach(ev =>
-    window.addEventListener(ev, unlock, {passive:true})
-  );
-</script>
+      );
+      };
+      ['click','touchstart','keydown','scroll'].forEach(ev =>
+      window.addEventListener(ev, unlock, {passive:true})
+      );
+    </script>
     <div class="iphone">
       <div class="div">
         <div class="overlap">
