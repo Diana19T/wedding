@@ -1,5 +1,11 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css?family=Inter:300,500,400,200");
+@font-face{
+    font-family: "Marianna";
+    src: url("fonts/Marianna.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     -webkit-font-smoothing: antialiased;
